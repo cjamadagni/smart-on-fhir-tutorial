@@ -36,7 +36,7 @@
         $.when(pt, doc).done(function(patient, doc) {
           console.log(doc);
           console.log(patient);
-        }
+        });
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
