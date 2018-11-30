@@ -11,8 +11,8 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
+        console.log(pt);
         console.log("This file is being called");
-        console.log(smart.patient.api.fetchAll());
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
