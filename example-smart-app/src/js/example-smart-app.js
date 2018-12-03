@@ -25,10 +25,10 @@
                   });
 
         var doc = smart.patient.api.fetchAll({
-                    type: 'DocumentReference'
-                    // query: {
-                    //
-                    // }
+                    type: 'DocumentReference',
+                    query: {
+
+                    }
                   });
 
         $.when(pt, obv).fail(onError);
