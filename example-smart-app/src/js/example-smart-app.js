@@ -13,6 +13,12 @@
         var pt = patient.read();
         console.log(pt);
         console.log("This file is being called");
+        var doc = smart.patient.api.fetchAll({
+                    type: 'DocumentReference',
+                    query: {
+
+                    }
+                  });
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -24,16 +30,14 @@
                     }
                   });
 
-        var doc = smart.patient.api.fetchAll({
-                    type: 'DocumentReference',
-                    query: {
 
-                    }
-                  });
 
         $.when(pt, obv).fail(onError);
 
+        $.when(pt, doc).fail(onError);
+
         $.when(pt, doc).done(function(patient, doc) {
+          console.log("Inside the DocumentReference");
           console.log(doc);
           console.log(patient);
         });
